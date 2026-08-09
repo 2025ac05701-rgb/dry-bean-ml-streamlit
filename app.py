@@ -117,7 +117,47 @@ if uploaded_file is not None:
     # --------------------------------------------------------
 
     test_data = pd.read_csv(uploaded_file)
+     # -----------------------------
+    # Clean column names
+    # -----------------------------
+    df.columns = df.columns.str.strip()
 
+    # -----------------------------
+    # Fix known column variations
+    # -----------------------------
+    df = df.rename(columns={
+        "AspectRatio": "AspectRation",
+        "Roundness": "roundness"
+    })
+
+    # -----------------------------
+    # Get expected features
+    # -----------------------------
+    model_features = list(scaler.feature_names_in_)
+
+    # -----------------------------
+    # Check missing columns
+    # -----------------------------
+    missing_features = [
+        col for col in model_features
+        if col not in df.columns
+    ]
+
+    if missing_features:
+        st.error(
+            f"Missing feature columns: {missing_features}"
+        )
+        st.stop()
+
+    # -----------------------------
+    # Prepare model input
+    # -----------------------------
+    X_test_app = df[model_features]
+
+    # -----------------------------
+    # Scale
+    # -----------------------------
+    X_model = scaler.transform(X_test_app)
     st.success(
         "Test dataset uploaded successfully!"
     )
