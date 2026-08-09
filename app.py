@@ -140,7 +140,7 @@ if uploaded_file is not None:
     # -----------------------------
     missing_features = [
         col for col in model_features
-        if col not in df.columns
+        if col not in test_data.columns
     ]
 
     if missing_features:
