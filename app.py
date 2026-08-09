@@ -120,12 +120,12 @@ if uploaded_file is not None:
      # -----------------------------
     # Clean column names
     # -----------------------------
-    df.columns = df.columns.str.strip()
+    test_data.columns = test_data.columns.str.strip()
 
     # -----------------------------
     # Fix known column variations
     # -----------------------------
-    df = df.rename(columns={
+    test_data = test_data.rename(columns={
         "AspectRatio": "AspectRation",
         "Roundness": "roundness"
     })
@@ -152,7 +152,7 @@ if uploaded_file is not None:
     # -----------------------------
     # Prepare model input
     # -----------------------------
-    X_test_app = df[model_features]
+    X_test_app = test_data[model_features]
 
     # -----------------------------
     # Scale
