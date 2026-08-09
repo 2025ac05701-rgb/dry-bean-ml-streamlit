@@ -36,6 +36,11 @@ The dataset contains images of seven different types of dry beans. Each bean is 
 
 The model uses **16 numerical features**.
 
+### Target Variable
 
+The target variable is:
+
+```text
+Class
 ```text
 Class
