@@ -125,10 +125,7 @@ if uploaded_file is not None:
     # Get expected features
     # -----------------------------
     model_features = list(scaler.feature_names_in_)
-
-    st.write("Expected model features:", model_features)
-    st.write("Uploaded CSV features:", list(test_data.columns))
-
+    
     # Handle possible naming variations
     aliases = {
         "AspectRatio": ["AspectRatio", "AspectRation"],
