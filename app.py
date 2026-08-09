@@ -121,20 +121,30 @@ if uploaded_file is not None:
     # Clean column names
     # -----------------------------
     test_data.columns = test_data.columns.str.strip()
-
-    # -----------------------------
-    # Fix known column variations
-    # -----------------------------
-    test_data = test_data.rename(columns={
-        "AspectRatio": "AspectRation",
-        "Roundness": "roundness"
-    })
-
     # -----------------------------
     # Get expected features
     # -----------------------------
     model_features = list(scaler.feature_names_in_)
 
+    st.write("Expected model features:", model_features)
+    st.write("Uploaded CSV features:", list(test_data.columns))
+
+    # Handle possible naming variations
+    aliases = {
+        "AspectRatio": ["AspectRatio", "AspectRation"],
+        "AspectRation": ["AspectRation", "AspectRatio"],
+        "Roundness": ["Roundness", "roundness"],
+        "roundness": ["roundness", "Roundness"]
+    }
+    # Rename uploaded columns according to what the model expects
+    for expected_col in model_features:
+        if expected_col not in test_data.columns:
+            possible_names = aliases.get(expected_col, [expected_col])
+    
+            for possible_name in possible_names:
+                if possible_name in test_data.columns:
+                    test_data = test_data.rename(columns={possible_name: expected_col})
+                    break
     # -----------------------------
     # Check missing columns
     # -----------------------------
