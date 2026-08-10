@@ -144,28 +144,15 @@ The models were evaluated using the following metrics:
 
 ## 6. Model Comparison
 
-The following table presents the evaluation results obtained for all
-five Machine Learning models.
+The performance of all five Machine Learning models was evaluated using Accuracy, AUC, Precision, Recall, F1 Score, and Matthews Correlation Coefficient (MCC).
 
-  ------------------------------------------------------------------------------------------------------------------------------------------
-  ML Model                 Accuracy                  AUC            Precision               Recall                   F1                  MCC
-  Name                                                                                                                  
-  ------------ -------------------- -------------------- -------------------- -------------------- -------------------- --------------------
-  Logistic       0.9206757253029747   0.9933984516940367   0.9215328435004574   0.9206757253029747   0.9208728071055451   0.9041666634728006
-  Regression                                                                                                            
-
-  Decision       0.8920308483290489   0.9333762814552742   0.8916927238123676   0.8920308483290489    0.891630337288096   0.8695693170006366
-  Tree                                                                                                                  
-
-  kNN            0.9166360631656262   0.9812466098253438   0.9174092603022151   0.9166360631656262   0.9168048079580466   0.8992035213926259
-
-  Naive Bayes    0.7638633859713552   0.9644421096213359   0.7653708847319572   0.7638633859713552   0.7614742997970327   0.7154063217966201
-
-  Random         0.9203084832904884   0.9914565371175954   0.9204695570622978   0.9203084832904884   0.9202830013062294   0.9036061590184772
-  Forest                                                                                                                
-  (Ensemble)                                                                                                            
-  ------------------------------------------------------------------------------------------------------------------------------------------
-
+| ML Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+|:---|---:|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.9207 | 0.9934 | 0.9215 | 0.9207 | 0.9209 | 0.9042 |
+| Decision Tree | 0.8920 | 0.9334 | 0.8917 | 0.8920 | 0.8916 | 0.8696 |
+| kNN | 0.9166 | 0.9812 | 0.9174 | 0.9166 | 0.9168 | 0.8992 |
+| Naive Bayes | 0.7639 | 0.9644 | 0.7654 | 0.7639 | 0.7615 | 0.7154 |
+| Random Forest (Ensemble) | 0.9203 | 0.9915 | 0.9205 | 0.9203 | 0.9203 | 0.9036 |
 ------------------------------------------------------------------------
 
 ## 7. Observations on Model Performance
@@ -346,7 +333,7 @@ dry-bean-ml-streamlit/
 ### Clone the Repository
 
 ``` bash
-git clone https://github.com/<your-username>/dry-bean-ml-streamlit.git
+git clone https://github.com/2025ac05701-rgb/dry-bean-ml-streamlit.git
 ```
 
 ### Navigate to the Project Directory
