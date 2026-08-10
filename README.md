@@ -157,69 +157,14 @@ The performance of all five Machine Learning models was evaluated using Accuracy
 
 ## 7. Observations on Model Performance
 
-### Logistic Regression
-
-Logistic Regression achieved an Accuracy of **92.07%**, an AUC of
-**99.34%**, Precision of **92.15%**, Recall of **92.07%**, F1 Score of
-**92.09%**, and MCC of **90.42%**.
-
-The model demonstrated strong and consistent performance across all
-evaluation metrics. Its very high AUC indicates excellent ability to
-distinguish between the different dry bean classes.
-
-------------------------------------------------------------------------
-
-### Decision Tree
-
-The Decision Tree achieved an Accuracy of **89.20%**, AUC of **93.34%**,
-Precision of **89.17%**, Recall of **89.20%**, F1 Score of **89.16%**,
-and MCC of **86.96%**.
-
-Although the Decision Tree performed reasonably well, its scores were
-lower than those of Logistic Regression, kNN, and Random Forest. This
-indicates that the single-tree approach was less effective than the
-stronger-performing models for this dataset.
-
-------------------------------------------------------------------------
-
-### kNN
-
-The kNN model achieved an Accuracy of **91.66%**, AUC of **98.12%**,
-Precision of **91.74%**, Recall of **91.66%**, F1 Score of **91.68%**,
-and MCC of **89.92%**.
-
-kNN performed strongly across all metrics and was close to Logistic
-Regression and Random Forest. The results indicate that the feature
-space contains useful neighborhood-based patterns for distinguishing the
-dry bean classes.
-
-------------------------------------------------------------------------
-
-### Naive Bayes
-
-Naive Bayes achieved an Accuracy of **76.39%**, AUC of **96.44%**,
-Precision of **76.54%**, Recall of **76.39%**, F1 Score of **76.15%**,
-and MCC of **71.54%**.
-
-Among the five models, Naive Bayes had the lowest Accuracy, Precision,
-Recall, F1 Score, and MCC. Although its AUC was relatively high, its
-overall classification performance was considerably lower. This suggests
-that the assumptions made by the Naive Bayes model may not adequately
-capture the relationships between the Dry Bean features.
-
-------------------------------------------------------------------------
-
-### Random Forest (Ensemble)
-
-Random Forest achieved an Accuracy of **92.03%**, AUC of **99.15%**,
-Precision of **92.05%**, Recall of **92.03%**, F1 Score of **92.03%**,
-and MCC of **90.36%**.
-
-Random Forest demonstrated excellent and balanced performance across all
-metrics. Its results were very close to Logistic Regression and slightly
-lower on most reported metrics, while still outperforming Decision Tree,
-kNN, and Naive Bayes overall.
-
+| ML Model Name | Observation about Model Performance |
+|:---|:---|
+| **Logistic Regression** | Logistic Regression achieved the best overall performance with an Accuracy of **92.07%**, AUC of **0.9934**, F1 Score of **92.09%**, and MCC of **0.9042**. It achieved the highest scores across all six evaluation metrics, making it the best-performing model for this dataset. |
+| **Decision Tree** | Decision Tree achieved an Accuracy of **89.20%** and an F1 Score of **89.16%**. Although it performed reasonably well, its performance was lower than Logistic Regression, kNN, and Random Forest across the major evaluation metrics. |
+| **kNN** | kNN performed strongly with an Accuracy of **91.66%**, AUC of **0.9812**, and F1 Score of **91.68%**. Its performance was close to Logistic Regression and Random Forest, indicating that the feature space contains useful neighborhood-based patterns for classification. |
+| **Naive Bayes** | Naive Bayes achieved the lowest overall classification performance, with an Accuracy of **76.39%**, F1 Score of **76.15%**, and MCC of **0.7154**. Although its AUC was relatively high at **0.9644**, its other metrics were significantly lower than the remaining models. |
+| **Random Forest (Ensemble)** | Random Forest achieved excellent performance with an Accuracy of **92.03%**, AUC of **0.9915**, F1 Score of **92.03%**, and MCC of **0.9036**. It was a very close second to Logistic Regression and demonstrated strong and balanced classification performance. |
+| **Overall Winner for the Dataset** | **Logistic Regression** is the overall winner because it achieved the highest Accuracy, AUC, Precision, Recall, F1 Score, and MCC among all five models. Random Forest was a very close second. |
 ------------------------------------------------------------------------
 
 ## 8. Overall Winner for the Dataset
